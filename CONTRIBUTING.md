@@ -14,9 +14,9 @@
 
 1. Run `yarn install && yarn prepare` from the root of the repository
 
-1. Create `.env.local` files:
+2. Create `.env.local` files in the project root directory. This file should contain environment-specific configurations for local development. At minimum, it should include database connection details and API keys if required.
 
-1. Create a Certificate Authority. Run `./core/scripts/register-ca.sh` from the root of the repository. This will create the required `$HOME/river-ca-cert.pem` and `$HOME/river-ca-key.pem` files.
+3. Create a Certificate Authority. Run `./core/scripts/register-ca.sh` from the root of the repository. This will create the required `$HOME/towns-ca-cert.pem` and `$HOME/towns-ca-key.pem` files.
 
 ## Running everything locally
 
@@ -48,7 +48,7 @@ CI will gate PR merges via unit tests. However, failing e2e tests won't gate mer
 
 We use turborepo to maintain our monorepos CI setup. Since maintaining CI in monorepos are a bit more complex than conventional repos, we depend on this tool for housekeeping. It figures out the dependency graph by reading package.jsons and understands which builds and tests should be run first.
 
-If you have a package in the monorepo, and
+If you have a package in the monorepo, andя
 a) you want it to be built on CI, add a `"build"` script
 b) you want it to be linted on CI, add a `"lint"` script
 c) you want its unit tests to be run on CI, add a `"test:unit"` script
